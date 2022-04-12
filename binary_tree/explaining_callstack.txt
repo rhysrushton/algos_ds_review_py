@@ -1,0 +1,70 @@
+            1
+           /  \
+           2   3
+         /  \
+         4   5
+
+## Explainer for how the printing solution works. This is in order of call stack
+
+Call the print function
+
+def print_tree(self):
+    return self.preorder_print(1,"")[-1]
+## the -1 removes the last element from the returned string. 
+
+def preorder_print(1,""):
+    if start:
+        traversal += "1-"
+        traversal = self.preorder_print(2, "1-")
+        ## Recursive call 1 ##
+
+def preorder_print(2, "1-"):
+    if start: 
+        traversal += "2-"
+        traversal = self.preorder_print(4, "1-2-")
+        ## Recursive call 2 ##
+
+def preorder_print(4,"1-2-"):
+    if start: 
+        traversal += "4-"
+        traversal = self.preorder_print(None, "1-2-4-")
+        ## Recursive Call 3 ##
+
+def preorder_print(None, "1-2-4-"):
+    if start: No so return
+    return traversal ('1-2-4-')
+
+## Recursive Call 3 ##
+def preorder_print(4,"1-2-"):
+    if start: 
+        traversal += "4-"
+        traversal = self.preorder_print(None, "1-2-4-")
+        traversal = self.preorder_print(None, "1-2-4-")
+    ## Make another call to the function but end up returning travesal ##
+
+## Recursive call 2 ##
+def preorder_print(2, "1-"):
+    if start: 
+        traversal += "2-"
+        traversal = self.preorder_print(4, "1-2-")
+        ## Recursive call 2 ##
+        traversal = self.preorder_print(5,"1-2-4-")
+        ## make another recursive call, 5 gets added to traversal and then gets returned when None of 5 (left/right) gets accessed
+    return "1-2-4-5"
+
+
+## Recursive call 1 ##
+def preorder_print(1,""):
+    if start:
+        traversal += "1-"
+        traversal = self.preorder_print(2, "1-")
+        ## Recursive call 1 ##
+        traversal = self.preorder_print(3,"1-2-4-5")
+        ## make another recursive call and get traversal "1-2-4-5-3-"
+
+def print_tree(self):
+    return "1-2-4-5-3-"[-1]
+
+
+
+
