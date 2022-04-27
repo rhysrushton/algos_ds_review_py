@@ -62,7 +62,7 @@ class Graph(object):
         # Indstead of at that index the list is equal to None we just put a list inside the list at that index and then append from there. 
         needed_length = self.list_length()
         edge_list = [None] * (needed_length +1)
-        print(edge_list)
+        #print(edge_list)
         
         for edge in self.edges:
             # check if there is an entry at this index or not.
@@ -85,7 +85,10 @@ class Graph(object):
         column numbers represent to nodes.
         Store the edge values in each spot,
         and a 0 if no edge exists."""
-        return []
+        list_to_return = [[0,0,0,0,0] for _ in range(self.list_length() +1 )]
+        for edge in self.edges:
+            list_to_return[edge.node_from.value][edge.node_to.value] = edge.value
+        return list_to_return
 
     def list_length(self):
         max_value = 0
