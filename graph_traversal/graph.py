@@ -55,15 +55,23 @@ class Graph(object):
         Each section in the list will store a list
         of tuples that looks like this:
         (To Node, Edge Value)"""
+        # go through the edges
+        # for each node record where it points to and the edge value
+            # put this in the corresponding index. 
+        # We are populating the list with null values. We don't create a 2d list straight away as indexing becomes tricky. 
+        # Indstead of at that index the list is equal to None we just put a list inside the list at that index and then append from there. 
         needed_length = self.list_length()
-        edge_list = [[None]] * (needed_length +1)
+        edge_list = [None] * (needed_length +1)
+        print(edge_list)
         
         for edge in self.edges:
             # check if there is an entry at this index or not.
-            if edge_list[edge.node_from.value]:
+            if edge_list[edge.node_from.value] != None:
                 edge_list[edge.node_from.value].append((edge.node_to.value, edge.value))
             else:
                 edge_list[edge.node_from.value] = [(edge.node_to.value, edge.value)]
+            
+            #print(edge_list)
         
         return edge_list
 
